@@ -1,0 +1,6 @@
+androidprecompiled/libc++_shared.so filter=lfs diff=lfs merge=lfs -text
+androidprecompiled/libpdfium.a filter=lfs diff=lfs merge=lfs -text
+iosprecompiled/libpdfium.a filter=lfs diff=lfs merge=lfs -text
+macosxprecompiled/libpdfium.a filter=lfs diff=lfs merge=lfs -text
+win32precompiled/pdfium.dll filter=lfs diff=lfs merge=lfs -text
+win32precompiled/pdfium.lib filter=lfs diff=lfs merge=lfs -text

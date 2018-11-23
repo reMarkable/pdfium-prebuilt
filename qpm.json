@@ -1,0 +1,18 @@
+{
+  "name": "no.remarkable.pdfium-binary",
+  "author": {
+    "name": "Henrik Hartz",
+    "email": "hhartz@gmail.com"
+  },
+  "repository": {
+    "type": "GIT",
+    "url": "git@github.com:reMarkable/pdfium-binary.git"
+  },
+  "version": {
+    "label": "3538"
+  },
+  "dependencies": [
+  ],
+  "license": "BSD_3_CLAUSE",
+  "priFilename": "pdfium-binary.pri"
+}
