@@ -9,7 +9,7 @@
     "url": "git@github.com:reMarkable/pdfium-binary.git"
   },
   "version": {
-    "label": "3538"
+    "label": "3538.1"
   },
   "dependencies": [
   ],
