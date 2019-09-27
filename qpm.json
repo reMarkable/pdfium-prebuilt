@@ -1,12 +1,12 @@
 {
   "name": "no.remarkable.pdfium-binary",
   "author": {
-    "name": "Henrik Hartz",
-    "email": "hhartz@gmail.com"
+    "name": "Martin Sandsmark",
+    "email": "martin.sandsmark@remarkable.no"
   },
   "repository": {
     "type": "GIT",
-    "url": "git@github.com:reMarkable/pdfium-binary.git"
+    "url": "git@github.com:reMarkable/pdfium-prebuilt.git"
   },
   "version": {
     "label": "3809.1"
