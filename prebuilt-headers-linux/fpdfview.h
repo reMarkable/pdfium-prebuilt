@@ -34,23 +34,24 @@
 #define FPDF_OBJECT_NULLOBJ 8
 #define FPDF_OBJECT_REFERENCE 9
 
-// PDF types - use incomplete types for type safety.
-typedef const struct fpdf_action_t__* FPDF_ACTION;
+// PDF types - use incomplete types (never completed) just for API type safety.
+typedef struct fpdf_action_t__* FPDF_ACTION;
 typedef struct fpdf_annotation_t__* FPDF_ANNOTATION;
 typedef struct fpdf_attachment_t__* FPDF_ATTACHMENT;
 typedef struct fpdf_bitmap_t__* FPDF_BITMAP;
-typedef const struct fpdf_bookmark_t__* FPDF_BOOKMARK;
+typedef struct fpdf_bookmark_t__* FPDF_BOOKMARK;
 typedef struct fpdf_clippath_t__* FPDF_CLIPPATH;
-typedef const struct fpdf_dest_t__* FPDF_DEST;
+typedef struct fpdf_dest_t__* FPDF_DEST;
 typedef struct fpdf_document_t__* FPDF_DOCUMENT;
 typedef struct fpdf_font_t__* FPDF_FONT;
 typedef struct fpdf_form_handle_t__* FPDF_FORMHANDLE;
+typedef struct fpdf_javascript_action_t* FPDF_JAVASCRIPT_ACTION;
 typedef struct fpdf_link_t__* FPDF_LINK;
 typedef struct fpdf_page_t__* FPDF_PAGE;
 typedef struct fpdf_pagelink_t__* FPDF_PAGELINK;
 typedef struct fpdf_pageobject_t__* FPDF_PAGEOBJECT;  // (text, path, etc.)
 typedef struct fpdf_pageobjectmark_t__* FPDF_PAGEOBJECTMARK;
-typedef const struct fpdf_pagerange_t__* FPDF_PAGERANGE;
+typedef struct fpdf_pagerange_t__* FPDF_PAGERANGE;
 typedef const struct fpdf_pathsegment_t* FPDF_PATHSEGMENT;
 typedef void* FPDF_RECORDER;  // Passed into skia.
 typedef struct fpdf_schhandle_t__* FPDF_SCHHANDLE;
@@ -888,7 +889,8 @@ FPDF_EXPORT FPDF_BOOL FPDF_CALLCONV FPDF_PageToDevice(FPDF_PAGE page,
 //
 //          This function allocates enough memory for holding all pixels in the
 //          bitmap, but it doesn't initialize the buffer. Applications can use
-//          FPDFBitmap_FillRect to fill the bitmap using any color.
+//          FPDFBitmap_FillRect() to fill the bitmap using any color. If the OS
+//          allows it, this function can allocate up to 4 GB of memory.
 FPDF_EXPORT FPDF_BITMAP FPDF_CALLCONV FPDFBitmap_Create(int width,
                                                         int height,
                                                         int alpha);

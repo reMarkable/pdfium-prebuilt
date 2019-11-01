@@ -1,5 +1,5 @@
 {
-  "name": "no.remarkable.pdfium-binary",
+  "name": "no.remarkable.pdfium-prebuilt",
   "author": {
     "name": "Martin Sandsmark",
     "email": "martin.sandsmark@remarkable.no"
@@ -9,7 +9,7 @@
     "url": "git@github.com:reMarkable/pdfium-prebuilt.git"
   },
   "version": {
-    "label": "3809.1"
+    "label": "3904.1"
   },
   "dependencies": [
   ],

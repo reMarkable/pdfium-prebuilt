@@ -112,6 +112,20 @@ FPDFText_GetFontInfo(FPDF_TEXTPAGE text_page,
                      unsigned long buflen,
                      int* flags);
 
+// Experimental API.
+// Function: FPDFText_GetCharAngle
+//          Get character rotation angle.
+// Parameters:
+//          text_page   -   Handle to a text page information structure.
+//                          Returned by FPDFText_LoadPage function.
+//          index       -   Zero-based index of the character.
+// Return Value:
+//          On success, return the angle value in radian. Value will always be
+//          greater or equal to 0. If |text_page| is invalid, or if |index| is
+//          out of bounds, then return -1.
+FPDF_EXPORT double FPDF_CALLCONV FPDFText_GetCharAngle(FPDF_TEXTPAGE text_page,
+                                                       int index);
+
 // Function: FPDFText_GetCharBox
 //          Get bounding box of a particular character.
 // Parameters:
@@ -468,6 +482,26 @@ FPDF_EXPORT FPDF_BOOL FPDF_CALLCONV FPDFLink_GetRect(FPDF_PAGELINK link_page,
                                                      double* top,
                                                      double* right,
                                                      double* bottom);
+
+// Experimental API.
+// Function: FPDFLink_GetTextRange
+//          Fetch the start char index and char count for a link.
+// Parameters:
+//          link_page         -   Handle returned by FPDFLink_LoadWebLinks.
+//          link_index        -   Zero-based index for the link.
+//          start_char_index  -   pointer to int receiving the start char index
+//          char_count        -   pointer to int receiving the char count
+// Return Value:
+//          On success, return TRUE and fill in |start_char_index| and
+//          |char_count|. if |link_page| is invalid or if |link_index| does
+//          not correspond to a valid link, then return FALSE and the out
+//          parameters remain unmodified.
+//
+FPDF_EXPORT FPDF_BOOL FPDF_CALLCONV
+FPDFLink_GetTextRange(FPDF_PAGELINK link_page,
+                      int link_index,
+                      int* start_char_index,
+                      int* char_count);
 
 // Function: FPDFLink_CloseWebLinks
 //          Release resources used by weblink feature.
