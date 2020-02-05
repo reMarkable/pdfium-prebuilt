@@ -16,6 +16,8 @@ win32 {
     DEFINES += _FX_OS_=_FX_LINUX_DESKTOP_
     DEFINES += _FXM_PLATFORM_=_FXM_PLATFORM_LINUX_
     LIBS += -L$$PWD/linuxprecompiled
+    # On Linux pdfium needs to explicitly link zlib
+    LIBS += -lz
 }
 
 INCLUDEPATH += $$PWD/prebuilt-headers-linux
