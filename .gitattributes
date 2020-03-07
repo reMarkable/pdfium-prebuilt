@@ -4,4 +4,6 @@ iosprecompiled/libpdfium.a filter=lfs diff=lfs merge=lfs -text
 macosxprecompiled/libpdfium.a filter=lfs diff=lfs merge=lfs -text
 win32precompiled/pdfium.dll filter=lfs diff=lfs merge=lfs -text
 win32precompiled/pdfium.dll.lib filter=lfs diff=lfs merge=lfs -text
-linuxprecompiled/libpdfium.a filter=lfs diff=lfs merge=lfs -text
+win64precompiled/pdfium.dll filter=lfs diff=lfs merge=lfs -text
+win64precompiled/pdfium.dll.lib filter=lfs diff=lfs merge=lfs -text
+llinuxprecompiled/libpdfium.a filter=lfs diff=lfs merge=lfs -text

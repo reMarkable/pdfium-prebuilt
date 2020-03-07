@@ -1,5 +1,9 @@
 win32 {
-    LIBS += -L$$PWD/win32precompiled
+    !contains(QMAKE_TARGET.arch, x86_64) {
+        LIBS += -L$$PWD/win32precompiled
+    } else {
+        LIBS += -L$$PWD/win64precompiled
+    }
 } else:macx {
     LIBS += -L$$PWD/macosxprecompiled
 } else:android {
