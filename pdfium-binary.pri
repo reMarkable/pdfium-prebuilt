@@ -4,6 +4,8 @@ win32 {
     } else {
         LIBS += -L$$PWD/win32precompiled
     }
+} else:iphoneos {
+    LIBS += -L$$PWD/iosprecompiled
 } else:macx {
     LIBS += -L$$PWD/macosxprecompiled
 } else:android {
