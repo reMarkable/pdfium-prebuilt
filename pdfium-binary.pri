@@ -1,3 +1,6 @@
+INCLUDEPATH += $$PWD/prebuilt-headers-linux
+LIBS += -lpdfium
+
 win32 {
     contains(QMAKE_TARGET.arch, x86_64) {
         LIBS += -L$$PWD/win64precompiled
@@ -25,6 +28,3 @@ win32 {
     # On Linux pdfium needs to explicitly link zlib
     LIBS += -lz
 }
-
-INCLUDEPATH += $$PWD/prebuilt-headers-linux
-LIBS += -lpdfium
